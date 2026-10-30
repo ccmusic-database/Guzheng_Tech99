@@ -29,7 +29,7 @@ jobs:
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
         run: |
-          git clone https://oauth2:$MS_TOKEN@www.modelscope.cn/studios/ccmusic-database/Guzheng_Tech99.git ../ms_repo
+          git clone -b master https://oauth2:$MS_TOKEN@www.modelscope.cn/studios/ccmusic-database/Guzheng_Tech99.git ../ms_repo
           rm -rf ./.git* ./LICENSE ./README.md
           cp -rf ../ms_repo/requirements.txt ../ms_repo/.git ./
           if [ -n "$(git status --porcelain)" ]; then
